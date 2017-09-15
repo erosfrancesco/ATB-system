@@ -1,0 +1,14 @@
+/*
+	In miscobject vengono definiti i comandi e i menu che vengono usati in battaglia, mentre in actor.js i personaggi.
+
+	Infine in spriteobjects.js vengono definite le sprite di gioco. In questi 3 file ci sono tutti gli esempi necessari per capire come creare nuovi personaggi con nuove abilità.
+
+
+
+
+
+
+
+
+
+*/

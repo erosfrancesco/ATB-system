@@ -1,0 +1,34 @@
+.wrapper {
+  position:absolute;
+  border:1px solid red;
+}
+
+
+/**/
+.cube {
+  height: 100%;
+  width: 100%;
+  /*margin: 1.5em auto;/**/
+  transform-style: preserve-3d;
+  /*transform: rotateX(40deg);/**/
+}
+
+/**/
+.side {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /*background: rgba(0,0,244,0.7);/**/
+  border: 1px solid black;
+  
+}
+
+/*
+.front  { transform:                  translateZ(4em); }
+.top    { transform: rotateX( 90deg)  translateZ(4em); }
+.right  { transform: rotateY( 90deg)  translateZ(4em); }
+.left   { transform: rotateY(-90deg)  translateZ(4em); }
+.bottom { transform: rotateX(-90deg)  translateZ(4em); }
+.back   { transform: rotateY(-180deg) translateZ(4em); }
+/**/
+

@@ -1,0 +1,27 @@
+/*
+
+	-ATB BATTLE:
+		-Enemy pattern
+		-Reiz and Death animations
+		-Counterattack
+		-Damage types (magic, physical, fire, wind, heart, water, etc)
+		-Doom, regen, poison and stop statuses, and maybe sleep too
+		-Weapons (lance, staff, fists)
+		-Simple magic
+
+
+	-MENU:
+		-Single Row Menus.
+		-Settable background color
+		-Magic menu
+
+
+	-ANIMATIONS:
+		-Spark animation
+		-Slash animation
+		-Angel animation
+
+
+
+
+*/

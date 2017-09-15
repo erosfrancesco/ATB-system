@@ -1,0 +1,24 @@
+.AnimationWrapper {
+
+}
+
+.Particle  {
+	position: absolute;
+
+	border-radius:50%;/**/
+}
+
+
+.StarSVG {
+  background-color: transparent;
+  position: absolute;
+  z-index: -1;
+}
+
+.BackgroundWrapper {
+
+	z-index:10;
+	position:absolute;
+	top:0%;
+	left:0%;
+}

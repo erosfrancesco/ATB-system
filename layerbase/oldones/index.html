@@ -1,0 +1,18 @@
+<body>
+	<script src='../setting.js'></script>
+	<script>_Ass.font='../'+_Ass.font;</script>
+	<script src='DOMinator.js'></script>
+	<script src='headers.js'></script>
+	<script src='loop.js'></script>
+	<script src='audio.js'></script>
+
+	<script>
+		var BattleWrp=new WrapperObj('Hellobattle');
+		var WorldWrp=new WrapperObj('Helloworld');
+
+		WrapperRef.Set('Hellobattle');
+		WrapperRef.Phase('hello',function(){console.log('he');});
+		WrapperRef.Pause('hello');
+
+	</script>
+</body>

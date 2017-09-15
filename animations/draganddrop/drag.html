@@ -1,0 +1,44 @@
+<body>
+	<link rel='stylesheet' href='drag.css'>
+	<style>
+		.dragAndDrop {
+			position: relative;
+			border: 1px solid black;
+			width: 100px;
+			height: 100px;
+		};
+
+	</style>
+
+
+	<script src="drag.js"></script>
+	<script src="headers.js"></script>
+
+
+
+	<script>
+		var s=create_Position_Point('M');
+
+		var c1=create_Position_Point('C');
+		var c1a=create_Position_Point('c1');
+		var c2b=create_Position_Point('c2');
+
+		var c2=create_Position_Point('C');
+		var c2b=create_Position_Point('c1');
+		var c2b=create_Position_Point('c2');
+
+
+		var string='M0 32 \
+				L18 32 \
+				C18 14 46 14 46 32 \
+				L64 32 \
+				C38 30 48 16 58 6 \
+				C46 18 34 20 32 0 \
+				C28 16 24 22 6 6 \
+				C26 26 16 32 0 32';
+
+
+		document.body.appendChild(CreateDefaultSVGPath(100,string));
+	</script>
+	<div id='displaySVG' style='position:absolute;top:110px;left:0px;width:100px;'></div>
+</body>

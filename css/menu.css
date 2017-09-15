@@ -1,0 +1,84 @@
+/*All of this is the background of the menu*/
+	div > .menu { /*used  in DrawBackMenu*/
+		background-color : rgba(73,73,203,1);/*59, 120, 219 //33,33,153,/**/
+		opacity: 1;
+	}
+
+	div > .menu > :first-child {
+		position : absolute;
+		width : inherit;
+		height : inherit; 
+		z-index : 1;
+		background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.85) 100%);
+	}
+
+	div > .menu > :nth-child(2) {
+		position : absolute;
+
+		width : calc(100% - 12px);
+		height : calc(100% - 12px);
+		top : 6px;
+		left : 6px;
+		box-shadow: inset 0px 0px 0px 2px #252525, 0px 0px 0px 4px #D2D2D2, 0px 0px 0px 6px #252525;
+		border-radius: 4px;
+		opacity : 0.8;
+		z-index : 2;
+	}
+/*The background-color can be changed!!*/
+
+
+/*And now the elements inside the menus*/
+	.menulist1 {
+		position : relative;
+		width : calc(100% - 12px);
+		/*border : solid 1px black;/**/
+		text-align : center;
+		margin : auto;
+		color : #D2D2D2;
+		font-family : 'FFVIFont';
+		font-size : 100%;
+		line-height : 220%;
+		z-index : 1;
+		text-shadow : 0px 3px 2px #000000;
+	}
+
+	.menulist2 {
+		position : relative;
+		width : calc(50% - 6px);
+		float : left;
+		
+		/*border : solid 1px black;/**/
+		text-align : center;
+
+		color : #D2D2D2;
+		font-family : 'FFVIFont';
+		font-size : 100%;
+		line-height : 220%;
+		z-index : 1;
+		text-shadow : 0px 3px 2px #000000;
+	}
+
+	.EnemyShowName {
+		position : relative;
+		width : calc(100% - 6px);
+		left: 12px;
+		/*border : solid 1px black;/**/
+		text-align : left;
+		color : #D2D2D2;
+		font-family : 'FFVIFont';
+		font-size : 100%;
+		line-height : 220%;
+		text-shadow : 0px 3px 2px #000000;
+	}
+/*-------------------------------------*/
+
+
+/*And last, but not least, the cursor div*/
+	.Cursor {
+		background-size : 100% 100%;
+		width : 32px;
+		height : 32px;
+		top : calc(50% - 16px);
+		left : 16px;
+	}
+/*+-------------------------------------+*/

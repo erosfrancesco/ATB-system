@@ -1,0 +1,338 @@
+<head>
+	<link href='css/sprites.css' rel='stylesheet' type='text/css'>
+	<link href='css/menu.css' rel='stylesheet' type='text/css'>
+	<link href='animations/index.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!---->
+		<script src='setting.js'></script>
+
+		<script src='layerbase/CoreHeaders.js'></script>
+		<script src='layerbase/PauseHeader.js'></script>
+		<script src='layerbase/wrappers.js'></script>
+
+		<script src='menu/inputobjects.js'></script>
+		<script src='menu/menu_Headers.js'></script>
+		<script src='menu/menu.js'></script>
+		<script src='menu/menumanager.js'></script>
+	<!---->
+		<script src='animations/Animations.js'></script>
+		<script src='sprites/sprites.js'></script>
+		<script src='sprites/animator.js'></script>
+		<script src='sprites/spriteObjects.js'></script>
+		<script src='sprites/background.js'></script>
+
+		<script src='battleobj/miscobject.js'></script>
+
+		<script src='battleobj/headers/enemy_Headers.js'></script>
+		<script src='battleobj/headers/battle_Headers.js'></script>
+		<script src='battleobj/headers/commands_Headers.js'></script>
+		<script src='battleobj/headers/damage_Headers.js'></script>
+		<script src='battleobj/headers/status_Headers.js'></script>
+
+		<script src='battleobj/PhaseSystem/ATB.js'></script>
+		<script src='battleobj/PhaseSystem/battleturn.js'></script>
+		<script src='battleobj/PhaseSystem/action_Headers.js'></script>
+		<script src='battleobj/PhaseSystem/action_manager.js'></script>
+		<script src='battleobj/Magic/menu_command.js'></script>
+
+		<script src='battleobj/Magic/magic_cure.js'></script>
+		<script src='battleobj/Magic/magic_fire.js'></script>
+		<script src='battleobj/Magic/magic_thunder.js'></script>
+
+		<script src='battleobj/spriteobjects.js'></script>
+		<script src='menu/menu_battle_objects.js'></script>
+		
+		<script src='battleobj/Players/players.js'></script>
+		<script src='battleobj/DOMObjects/ATB.js'></script>
+		<script src='battleobj/DOMObjects/Digits.js'></script>
+		<script src='battleobj/initbattle.js'></script>
+		
+	<!---->
+		<script src='animations/trembling.js'></script>
+		<script src='animations/sprite.js'></script>
+		<script src='animations/headers.js'></script>
+
+
+		<script src='animations/slashanimation.js'></script>
+		<script src='animations/glitteranimation.js'></script>
+		<script src='animations/staranimation.js'></script>
+	<!---->
+		<script src='battleobj/Players/fantasyGround.js'></script>
+		<script src='battleobj/Players/actors.js'></script>
+		<script src='battleobj/Weapons/headers.js'></script>
+		<script src='battleobj/Weapons/sword.js'></script>
+		<script src='battleobj/Weapons/lance.js'></script>
+		<script src='battleobj/Weapons/staff.js'></script>
+	<!---->
+
+	<!---->
+	<script src='battleobj/Pattern.js'></script>
+	<script src='battleobj/battle_generators.js'></script>
+	
+	<script>
+/*
+		BackgroundBattle(BackgroundNullSprite);
+		var _Back_Ref=PlayerPool.Background;
+		_Back_Ref.DOM.Filter.aValue=0.65;
+
+		var color1='rgba(0,0,0,1)';
+		var color2='rgba(215,215,215,1)';
+		var linear='linear-gradient(to bottom,'+
+			color1+' 0%,'+
+			color2+' 50%,'+
+			color1+' 100%'+')';
+
+		var eclipseGradient='radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,'+
+			'rgba(102,102,152,0.4) 50%,'+
+			'rgba(0,0,0,0) 65%)';
+
+		
+		
+
+
+
+		function SetFFVChaosPlanetarium(){
+
+			_Back_Ref.Vel=3;
+			_Back_Ref.Hei=1;
+			_Back_Ref.DOM.Slices=[];
+			_Back_Ref.DOM.Stars=[];
+			_Back_Ref.limitVel=10;
+
+			var d=document.createElement('div');
+			d.style.width='100%';
+			d.style.height='200%';
+			d.style.position='absolute';
+			d.style.top='5%';
+			d.style.zIndex= -1;
+			_Back_Ref.DOM.Ref.appendChild(d);
+			_Back_Ref.DOM.VelWrap=d;
+			console.log(_Back_Ref.DOM.Ref.offsetWidth,_Back_Ref.DOM.Ref.offsetHeight);
+			
+		
+
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+
+
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+			AttachBackSlice1(_Back_Ref.DOM.VelWrap,10);
+
+		}
+
+
+		function AttachBackSlice1(parent,height){
+			var backSlice=document.createElement('div');
+			backSlice.style.width='100%';
+			backSlice.style.height=height+'%';
+			backSlice.style.position.float='top';
+			backSlice.style.background=linear;
+			
+			parent.appendChild(backSlice);
+			_Back_Ref.DOM.Slices.push(backSlice);
+
+			//backSlice.update=function(compress){backSlice.style.height=(height/compress)+'%';}
+		}
+
+
+		function AttachStandardStar(height,width,dx,dy){
+
+			var star=document.createElement('div');
+			star.style.position='absolute';
+			star.style.width=width;
+			star.style.height=height;
+			star.style.background=eclipseGradient;
+
+
+			star.updatePosition=function(vx,vy,limitW,limitH){
+				
+				MoveInDirection(star,vx,vy);
+
+				if(star.offsetTop > limitH){
+					MoveInDirection(star,0,-limitH-star.offsetHeight);
+				}else{if(star.offsetTop < -star.offsetHeight){
+					MoveInDirection(star,0,limitH+star.offsetHeight);
+				}}
+
+				if(star.offsetLeft > limitW+star.offsetWidth){
+					MoveInDirection(star,-limitW-(star.offsetWidth*2),0);
+				}else{if(star.offsetLeft < -star.offsetWidth){
+					MoveInDirection(star,limitW+star.offsetWidth,0);
+				}}
+			}
+
+			_Back_Ref.DOM.Ref.appendChild(star);
+			_Back_Ref.DOM.Stars.push(star);
+			MoveInDirection(star,dx,dy);
+		}
+
+
+
+		function UpdatePlanetariumStars(){
+			//RetProb();
+			_Back_Ref.DOM.Stars.forEach((star,indx)=>{
+				star.updatePosition(_Back_Ref.Vel*3,
+					_Back_Ref.Vel/2,
+					_Back_Ref.DOM.Ref.offsetWidth,
+					_Back_Ref.DOM.Ref.offsetHeight);
+			});
+		}
+
+		PhaseLoop('StarPosUpdate',UpdatePlanetariumStars);
+
+
+		//function UpdatePlanetariumSlices(){_Back_Ref.DOM.Slices.forEach((slice,indx)=>{slice.update(_Back_Ref.Hei);});}
+
+
+		function UpdatePlanetariumPosition(height,limitH){
+
+			var div=_Back_Ref.DOM.VelWrap;
+			div.style.top=div.offsetTop+_Back_Ref.Vel;
+
+			if(_Back_Ref.Vel>0){
+				if( div.offsetTop >= (-height*100/limitH*_Back_Ref.Hei) ){
+					div.style.top= -limitH-1;
+				}
+			}else{
+				if( div.offsetTop <= -limitH ){
+					div.style.top= -1;
+				}
+			}
+			
+		}
+
+
+		/*function UpdateSliceCompression(delta){ // hei=[1...2]
+			if(delta > 0){
+				if(_Back_Ref.Hei<2){_Back_Ref.Hei+=(delta);}
+			}else{
+				if(_Back_Ref.Hei>1){_Back_Ref.Hei+=(delta);}
+			}
+			
+		}/**//*
+
+		function UpdatePlanetariumVelocity(delta){ // vel=[-8...8]
+			if(delta>0){
+				if(_Back_Ref.Vel <= _Back_Ref.limitVel){_Back_Ref.Vel+=(delta);}
+			}else{
+				if(_Back_Ref.Vel >= -_Back_Ref.limitVel){_Back_Ref.Vel+=(delta);}
+			}
+		}
+
+		function UpdatePlanetariumColor(delta){
+			switch (RetRandom(1,105)){
+				case 1:
+				if(delta > 0 && _Back_Ref.DOM.Filter.rValue < 144){_Back_Ref.DOM.Filter.rValue+=delta;}
+				if(delta < 0 && _Back_Ref.DOM.Filter.rValue > 144){_Back_Ref.DOM.Filter.rValue+=delta;}
+					
+				break;;
+				case 2:
+					if(delta > 0 && _Back_Ref.DOM.Filter.gValue < 74){_Back_Ref.DOM.Filter.gValue+=delta;}
+					if(delta < 0 && _Back_Ref.DOM.Filter.gValue > 74){_Back_Ref.DOM.Filter.gValue+=delta;}
+				break;;
+				case 3:
+					if(delta > 0 && _Back_Ref.DOM.Filter.bValue < 164){_Back_Ref.DOM.Filter.bValue+=delta;}
+					if(delta < 0 && _Back_Ref.DOM.Filter.bValue > 164){_Back_Ref.DOM.Filter.bValue+=delta;}
+				break;;
+
+				case 4:
+
+					if(delta > 0 && _Back_Ref.DOM.Filter.gValue > delta){_Back_Ref.DOM.Filter.gValue-=delta;}
+					if(delta < 0 && _Back_Ref.DOM.Filter.gValue < 74){_Back_Ref.DOM.Filter.gValue-=delta;}
+
+					if(delta > 0 && _Back_Ref.DOM.Filter.bValue > delta){_Back_Ref.DOM.Filter.bValue-=delta;}
+					if(delta < 0 && _Back_Ref.DOM.Filter.bValue < 164){_Back_Ref.DOM.Filter.bValue-=delta;}
+					
+				break;;
+
+				case 5:
+
+					if(delta > 0 && _Back_Ref.DOM.Filter.gValue > delta){_Back_Ref.DOM.Filter.gValue-=delta;}
+					if(delta < 0 && _Back_Ref.DOM.Filter.gValue < 74){_Back_Ref.DOM.Filter.gValue-=delta;}
+
+					if(delta > 0 && _Back_Ref.DOM.Filter.rValue > delta){_Back_Ref.DOM.Filter.rValue-=delta;}
+					if(delta < 0 && _Back_Ref.DOM.Filter.rValue < 144){_Back_Ref.DOM.Filter.rValue-=delta;}
+
+				break;;
+				default:
+				break;;
+			}
+
+		}
+
+		var proportions=5;
+
+		/**//*_AddGenericAdditiveOscillation(_Back_Ref,'VelocityChange',0.04,proportions*200,(val)=>{
+
+				_Back_Ref.DeltaVel=(val*val*val)*100*100;
+
+				UpdatePlanetariumVelocity(_Back_Ref.DeltaVel),
+				UpdatePlanetariumPosition(20,_Back_Ref.DOM.Ref.offsetHeight);
+		});
+
+
+		/**//*_AddGenericAdditiveOscillation(_Back_Ref,'ColorChange',20,proportions*400,(val)=>{
+			
+				_Back_Ref.DeltaHue=val;
+				UpdatePlanetariumColor(_Back_Ref.DeltaHue);
+				_Back_Ref.DOM.Filter.compute();
+
+		});
+
+
+
+		
+		function StarsIntoArea1(x,y){
+			AttachStandardStar('3%','25%',0+x,40+y);
+			AttachStandardStar('3%','25%',-50+x,100+y);
+			AttachStandardStar('3%','25%',100+x,0+y);
+		}
+
+		function StarCluster(x,y){
+			StarsIntoArea1(100+x,20+y);
+			StarsIntoArea1(220+x,120+y);
+			StarsIntoArea1(280+x,280+y);
+		}
+
+
+
+		SetFFVChaosPlanetarium();
+
+		StarCluster(-50,-50);
+		//StarCluster(210,90);
+		StarCluster(450,110);
+
+		//StarCluster(1050,320);
+		
+		StarCluster(750,420);
+
+
+		
+		
+	</script>
+
+
+</body>

@@ -1,0 +1,80 @@
+/*
+
+	Bugs : Il sistema di selezione del bersaglio a volte fa cilecca, dipende se un altro giocatore ha gia selezionato quel bersaglio
+
+*/
+
+
+
+
+/*  DataFlow :
+
+	-every cicle :
+		ActiveTimeFlowLoop();			<-- Active Time stuffs. ATB bar update, some status check
+		ActionCheckLoop();			<-- Execute Clock and load Command for every player
+		MenuCheckLoop(ReturnCurrentPlayer());	<-- input and menu selection
+
+	==> Basically:	-Update time for every player
+			-Check if there are some actions, commands etc ( refer to action section, it's a lot of stuff )
+			-Update input, menu and turn phase of the current player
+
+
+	The thing you'll want to modify is ActionCheckLoop function and all its child functions.
+	Leave the other two as they are, because they are standard and don't interfere with the turn and action structures.
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Active Time Battle System (ATB): Battaglia rpg in stile FFIII-IX, riprogrammata in javascript.
+
+	Il file principale è index.html, che avvia la battaglia, dopo aver caricato dei personaggi, uno sfondo e dei nemici da oggetti javascript.
+
+	Il file importa quasi tutti i file javascript e css del progetto, ed è quello che deve essere aperto nel browser. È importante che vi siano importati i vari file in un preciso ordine, in quanto ci sono vari layer di astrazione, e alcuni file definiscono funzioni base per altri.
+
+
+
+	Andando per ordine ci sono:
+
+	-settings.js :  Il primo file ad essere linkato in index. Definisce:
+
+ 		- L'oggetto _Ass, che definisce vari path dei file,
+		- L'oggetto _S, che definisce la posizione e le dimensioni di default della schermata di gioco,
+		- L'oggetto _KeyDef, che servirà per gestire gli input da tastiera.
+
+
+	-I file nella cartella layerbase:
+	( Questi non dovrebbero essere toccati, in quanto sono usati ad un livello molto basso. Modificarli significa dover cambiare quasi tutto )
+		-CoreHeaders.js
+		-PauseHeaders.js
+		-wrappers.js
+	In questa cartella ci sono anche audio.js e modular.html, che non sono usati. audio è da reimpostare o forse anche da rifare da capo. 
+	modular server per provare gli oggetti wrapper e la pausa del gioco. Vedere il README della cartella per maggiori info.
+	
+	Dopo aver caricato i file di layerbase vengono creati due WrapperObj, ( uno è obsoleto ) che servono a settare un ambiente di gioco.
+	
+ 
+ 	-I file nella cartella battleobj, che definiscono il sistema di battaglia.
+	Qui ci sono anche un paio di file che definiscono vari oggetti, tra cui i personaggi, le sprite, gli sfondi e alcune armi.
+	Per maggiori info, vedi il file README in questa cartella.
+
+Ci sono anche varie demo che aiutano a capire meglio come creare nuovi oggetti di gioco o come funzionano determinate animazioni.
+È consigliabile capire prima di tutto il sistema base definito nei file della cartella layerbase, e poi passare a battleobj.

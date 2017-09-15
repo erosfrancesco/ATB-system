@@ -1,0 +1,74 @@
+<head>
+	<link href='../css/sprites.css' rel='stylesheet' type='text/css'>
+	<link href='../animations/index.css' rel='stylesheet' type='text/css'> <!-- maybe this one is useless -->
+</head>
+<body>
+	<!---->
+		<script src='../setting.js'></script>
+		<script>
+			AbsPath='../';
+			_Ass.SprtPath=AbsPath+'sprites';/**/
+		</script>
+
+		<script src='../layerbase/CoreHeaders.js'></script>
+		<script src='../layerbase/PauseHeader.js'></script>
+		<script src='../layerbase/wrappers.js'></script>
+
+		<script src='../animations/Animations.js'></script>
+		<script src='animator.js'></script>
+		<script src='sprites.js'></script>
+		<script src='spriteObjects.js'></script>
+		<script src='fireball.js'></script>
+		<script src='../animations/trembling.js'></script>
+	
+	<script>
+
+		var BackSprite={
+			src:'windowsxp.png',
+			width:800,
+			height:450
+		};
+
+		var background=SpriteAnimator(BackSprite,"../sprites",'0%','0%','0%',0,'100%','100%');
+		background.attachTo(ReturnCurrentWrapper());
+
+
+		var DuelistSprite={
+			src:'Duelist-ffv-ios.png',
+			width:103,
+			height:113
+		};
+
+		var v=SpriteAnimator(DuelistSprite,"../sprites",'55%','50%',0);
+		v.attachTo(ReturnCurrentWrapper());
+
+
+		_AddXOscillation(background,1,10);
+		_AddXOscillation(background,2,4);
+		_AddYOscillation(background,1,4);
+
+		setTimeout(()=>{_RemoveOscillationRef(v,'oscillationX');},10000);
+
+
+		/*var fireball=Fire1Object();
+		fireball.draw();
+		fireball.posit('65%','55%');
+		fireball.resize(1.5);
+		fireball.purpleFilter();
+		fireball.animate();/**/
+
+
+
+		var steam=SteamObject();
+
+		steam.draw();
+		steam.posit('50%','55%');
+
+		steam.greenFilter();
+
+		steam.animate();/**/
+
+	</script>
+
+
+</body>

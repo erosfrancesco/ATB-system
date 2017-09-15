@@ -1,0 +1,85 @@
+<head>
+	<link href='../../../css/sprites.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<script src='../../../setting.js'></script>
+
+	<script src='../../../layerbase/CoreHeaders.js'></script>
+	<script src='../../../layerbase/PauseHeader.js'></script>
+	<script src='../../../layerbase/wrappers.js'></script>
+	<script>
+
+		_Ass.path='../../../'+_Ass.path;
+		var BattleWrp=new WrapperObj('Hello_Battle');
+		var WorldWrp=new WrapperObj('Hello_New_World');
+		WrapperRef.Set('Hello_Battle');
+		SwitchToWrapper('Hello_New_World');
+
+	</script>
+
+	<script src='../../../battleobj/inputobjects.js'></script>
+	<script src='../../../battleobj/miscobject.js'></script>
+	<script src='../../../battleobj/enemy_Headers.js'></script>
+	<script src='../../../battleobj/battle_Headers.js'></script>
+	<script src='../../../battleobj/commands_Headers.js'></script>
+	<script src='../../../battleobj/menu_Headers.js'></script>
+
+	<script src='../../../battleobj/spriteobjects.js'></script>
+	<script src='../../../battleobj/menu.js'></script>
+	<script src='../../../battleobj/menumanager.js'></script>
+	<script src='../../../battleobj/actors.js'></script>
+	<script src='../../../battleobj/players.js'></script>
+	<script src='../../../battleobj/initbattle.js'></script>
+	<script src='../../../battleobj/battleturn.js'></script>
+	<script src='../../../battleobj/Animations.js'></script>
+	<script src='../../../battleobj/Pattern.js'></script>
+
+	
+	<script>
+		_CreateBackgroundFromSprite(GoldenSkySprite);
+		//_CreateBackgroundFromSprite(ForestBattle);
+
+		//_DrawAPlayer(P1);
+		
+		/*var FlaremancerSprite={
+			src:'Flaremancer-ffv-ios.png',
+			framn:[1,1],
+			width:109,
+			height:112
+		};*/
+
+		function HelloDraw(sprite,w,h,x,y){
+			x=x||510;
+			y=y||60;
+			w=w||sprite.width;
+			h=h||sprite.height;
+			var s=_CreateDivFromSprite(sprite,x,y);
+			s.style.width=w;s.style.height=h;
+			ReturnCurrentWrapper().appendChild(s);
+		}
+
+		HelloDraw(KnightSprite,180,240,420,40);	//729 960
+		HelloDraw(DragoonSprite,180,240,460,70);
+		HelloDraw(MonkSprite,210,280,500,100);
+		HelloDraw(HealerSprite,210,280,540,130);
+		HelloDraw(BardSprite,390,390,30,1);
+
+		//180 => 90 => 9 => 3
+		//240 => 120 => 12 => 4
+
+
+		/*
+
+		var s=_CreateDivFromSprite(FlaremancerSprite,110,110);
+		ReturnCurrentWrapper().appendChild(s);
+
+/*		_DrawAPlayer(P1);
+		_DrawAPlayer(P2);
+		_DrawAPlayer(P3);
+		_DrawAPlayer(P4);
+		*/
+
+
+
+	</script>
+</body>

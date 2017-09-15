@@ -1,0 +1,23 @@
+<head>
+	<link href='../css/sprites.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<script src='../setting.js'></script>
+	<script src='CoreHeaders.js'></script>
+	<script src='PauseHeader.js'></script>
+	<script src='wrappers.js'></script>
+	<script>
+		var BattleWrp=new WrapperObj('Hellobattle');
+		var WorldWrp=new WrapperObj('Helloworld');
+
+		WrapperRef.Set('Hellobattle');
+
+		function ExecButt(){console.log('Helloworld');}
+		var Butler=new Buttler();
+		Butler.Add(ExecButt);
+		Butler.Add(ExecButt);
+
+		WrapperRef.Phase('hello', Butler.Cicle);
+		//WrapperRef.Pause('hello');
+	</script>
+</body>

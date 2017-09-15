@@ -1,0 +1,79 @@
+<head>
+	<link href='cubeCss.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body style='background:black'>
+
+	<script>
+
+	function CreatePerspectiveWrapper(wid,hei,x,y,p){
+		var div=document.createElement('div');
+		
+		div.style.perspective=p+'px';
+		div.style.width=wid+'px';
+		div.style.height=hei+'px';
+		div.style.position='absolute';
+		div.style.top=y;
+		div.style.left=x;
+		div.style.border='solid 1px red';
+
+		var cube=document.createElement('div');
+		div.className='cubeWrapper';
+		div.appendChild(cube);
+		return div;
+	}
+
+
+
+	function Create3DCubeInto(wrapper,p){
+
+
+		/*LEFT*/side=document.createElement('div');
+			side.style.transform='rotateY( -90deg)  translateZ('+p+'px)';
+			side.className='side';
+			wrapper.firstChild.appendChild(side);
+
+		/*RIGHT*/side=document.createElement('div');
+			side.style.transform='rotateY( 90deg)  translateZ('+p+'px)';
+			side.className='side';
+			wrapper.firstChild.appendChild(side);
+
+
+		/*TOP*/var side=document.createElement('div');
+			side.style.transform='rotateX( 90deg)  translateZ('+p+'px)';
+			side.className='side';
+			wrapper.firstChild.appendChild(side);
+
+		/*BOTTOM*/side=document.createElement('div');
+			side.style.transform='rotateX( -90deg)  translateZ('+p+'px)';
+			side.className='side';
+			wrapper.firstChild.appendChild(side);
+
+
+		/*BACK*/side=document.createElement('div');
+			side.style.transform='rotateY( 180deg)  translateZ('+p+'px)';
+			side.className='side';
+			wrapper.firstChild.appendChild(side);
+
+
+		/*FRONT*/side=document.createElement('div');
+			side.style.transform='translateZ('+p+'px)';
+			side.className='side';
+			wrapper.firstChild.appendChild(side);
+	
+	}
+
+	var Wrap=CreatePerspectiveWrapper(100,100,350,250,100);
+	Create3DCubeInto(Wrap,100);
+
+	document.body.appendChild(Wrap);
+	
+
+	</script>
+
+
+
+
+
+
+</body>

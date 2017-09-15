@@ -1,0 +1,52 @@
+/* Questi file offrono strumenti base per creare e gestire un ambiente di gioco, oltre ad alcune funzioni utili per alcuni problemi ricorrenti.
+
+CoreHeader : Qui vengono definiti in particolare 2 classi fondamentali: Buttler e AnimatorObj. AnimatorObj serve a creare un oggetto che gestisce i loop di update, ed è il primo che deve essere analizzato.
+
+Nello schema generare della creazione di giochi javascript, viene definita una funzione Update() ( o Refresh() ), che viene loopata 30 volte al secondo (ovvero ad ogni clock), e questa aggiorna tutti gli stati del gioco e renderizza i cambiamenti grafici, in modo da tenere il gioco aggiornato.
+Nei giochi più complessi, in cui si deve tenere conto di un infinità di stati e cambiamenti, una singola funzione non basta. Bisogna creare un sistema che controlli ad ogni update del gioco quali funzioni andare ad eseguire, in modo da poterle gestire singolarmente.
+
+AnimatorObj crea un oggetto che ha una lista di oggetti, ogniuno costituito da un puntatore ad una funzione, e un valore bool. Se questo valore è vero, la funzione richiamata dal puntatore viene eseguita, altrimenti no. Siccome questi puntatori sono sfruttati per gestire le varie fasi del turno di combattimento, ho chiamato l'oggetto Phase.
+
+Ricapitolando, ogni AnimatorObj ha una lista di Phase, che vengono controllati dalla funzione di update. Ovviamente è possibile cambiare la funzione di un puntatore, oltre che attivarla o disattivarla.
+						
+						|			
+			    AnimatorObj Anim1 : | Phase1:{ Pointer1: f1, //f1 viene eseguita finche Bool1 rimane true... 
+						|          Bool1 : true }
+						|
+						| Phase2:{ Pointer2: f2, //f2 non viene eseguita fino a che Bool2 non cambia in true...
+						|          Bool2 : false }
+						| ···
+						| ···
+						| PhaseN
+
+Vedere il README relativo al battleturn.js per capire come viene usato.
+
+Il secondo oggetto, Buttler, è molto più semplice, e serve ad eseguire in modo sincrono e temporizzato delle funzioni. È essenzialmente una lista FIFO di funzioni, con dei metodi per aggiungere varie funzioni alla lista (Add), ed eseguirle (Run). Si deve loopare un suo metodo, Cicle, possibilmente sfruttando un AnimatorObj, in modo tale che ad ogni ciclo esegua la prima funzione della sua lista, che poi verrà eliminata.
+
+Lo si può pensare come un orologio, che esegue un'azione alla volta ad ogni tick della lancetta, finchè la lista non finisce.
+Se la lista è vuota, non fa nulla finchè non vi vengono caricate altre funzioni da eseguire.
+Viene utilizzato molto nelle animazioni, in quanto permette di temporizzare l'esecuzione delle funzioni.
+È molto utile per gestire l'input e il sistema ATB della battaglia.
+
+
+In CoreHeader viene definita anche la funzione InputFrom, che gestisce l'input. Questa deve essere posta in loop, con determinati parametri:
+	
+	-il primo parametro è un array che associa i tasti alle rispettive funzioni da eseguire. 
+	 Molti di questi array sono definiti in inputobject.js.
+	-il secondo paramtero è la sensibilità dell'input.
+
+
+Infine viene definita la classe WrapperObj, che ha al suo interno un AnimatorObj per gestire i loop relativi.
+Questa classe crea un ambiente di gioco switchabile, che viene utilizzata per impostare una schermata di gioco.
+
+In wrapper.js, infine, viene creato un oggetto, WrapperRef, capace di gestire i WrapperObj, offrendo metodi per switcharli.
+Per programmare nuovi aspetti di una battaglia, non serve toccare questo oggetto. Al momento viene utilizzato solo per mettere il gioco in pausa.
+
+Quando il gioco viene messo in pausa, l'oggetto WrapperRef salva lo stato del WrapperObj che sta girando e lo switcha con il WrapperObj di pausa. Quando poi il gioco viene ripreso, ripristina il precedente WrapperObj e lo switcha con il WrapperObj di pausa.
+
+Quando verrà programmata anche la schermata del mondo, si userà WrapperRef per gestire la transizione da schermata del mondo a schermata di battaglia, e viceversa.
+*/
+
+
+
+

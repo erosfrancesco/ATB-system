@@ -1,0 +1,8 @@
+// For animation object: SpriteAnimator : 	-No clock
+//						-Polyfill framn
+//						-Refresh function for sprite
+//						-AttachTo
+
+
+// Reference for animation object and animation SVG should be placed in AnimationRef object of player
+// use --> player.DOM.Ref.appendChild(player.AnimationRef[object]) <-- for displaying

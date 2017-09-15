@@ -1,0 +1,16 @@
+/*
+
+
+	Questa parte è ancora da stabilire.
+	
+	Tutte le animazioni utilizzano l'oggetto Clock di almeno un pg per girare. L'oggetto Clock è definito con la classe Buttler (vedere il README di layerbase)
+
+	Quando un'azione della battaglia viene eseguita, vengono controllati i vari target, poi vengono caricati, nell'oggetto Clock di ogni target, varie funzioni che eseguiranno l'animazione.
+
+
+
+
+
+
+
+*/

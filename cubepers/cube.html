@@ -1,0 +1,97 @@
+<head>
+</head>
+<body>
+
+	<style>
+	
+		.wrapper {
+			position:absolute;
+			border:1px solid red;
+		}
+
+		.cube {
+			width:100%;
+			height:100%;
+			transform-style: preserve-3d;
+		}
+
+		.cubeside {
+			position:absolute;
+			width:100%;
+			height:100%;
+			border:solid 1px black;
+		}
+	</style>
+
+
+	<script>
+
+		var wid=200;
+		var hei=200;
+		
+		var div=document.createElement('div');
+		div.className='wrapper';
+		div.style.left='250px';
+		div.style.top='100px';
+		div.style.width=wid+'px';
+		div.style.height=hei+'px';
+
+		document.body.appendChild(div);
+
+		var cube=document.createElement('div');
+		cube.className='cube';
+		div.appendChild(cube);
+		cube.style.transform='rotateX(20deg) rotateY(30deg)';
+		
+
+
+		/**/var side=document.createElement('div');side.style.transform='translateZ('+hei/2+'px)';//'rotateX(90deg) rotateY(90deg)'
+			cube.appendChild(side);
+			side.style.width=wid+'px';
+			side.style.height=hei+'px';
+			side.className='cubeside';/**/
+		
+		/**/var side=document.createElement('div');side.style.transform='rotateX(90deg)';
+			cube.appendChild(side);
+			side.style.top='-50%';
+			side.style.width=wid+'px';
+			side.style.height=hei+'px';
+			side.className='cubeside';/**/
+
+			var par1=100;//450 = 141
+			var adj=50;
+
+
+		/**/var side=document.createElement('div');side.style.transform='rotateY(90deg)';
+			cube.appendChild(side);
+			side.style.left='50%';//(-par1*(200/470)*((wid/hei)))+'%';//'0%';
+			side.style.width=hei+'px';
+			side.style.height=hei+'px';
+			side.className='cubeside';/**/
+
+		/**/var side=document.createElement('div');side.style.transform='rotateY(-90deg)';
+			cube.appendChild(side);
+			side.style.left='-50%'//(-par1*((wid/hei)*(wid/hei)))-100+'%';//'-100%';//50*(wid/hei)+'%';//'-112.5%'; //wid=200,hei=450
+			side.style.width=hei+'px';
+			side.style.height=hei+'px';
+			side.className='cubeside';/**/
+
+
+		/**/var side=document.createElement('div');side.style.transform='rotateX(-90deg)';
+			cube.appendChild(side);
+			side.style.top='50%';
+			side.style.width=wid+'px';
+			side.style.height=hei+'px';
+			side.className='cubeside';/**/
+
+		/*var side=document.createElement('div');//side.style.transform='rotateY(180deg)';
+			cube.appendChild(side);
+			side.style.top='-50%';
+			side.style.left='50%';
+			side.className='cubeside';/**/
+
+
+	</script>
+
+
+</body>

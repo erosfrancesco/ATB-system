@@ -1,0 +1,30 @@
+<body style='background:green'>
+
+<script src='Animations.js'></script>
+<script src='headers.js'></script>
+<script src="glitteranimation.js"></script>
+<script src="staranimation.js"></script>
+<script src="halfeclipse.js"></script>
+
+
+<script>
+	var s=CreateDefaultGlitter('20%');
+	document.body.appendChild(s);
+	s.style.width=s.offsetHeight;
+
+	var eclipseGradient='radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,'+
+		'rgba(102,102,222,0.9) 50%,'+
+		'rgba(0,0,0,0) 65%)';
+
+
+
+	var d=document.createElement('div');
+	d.style.width='30%';
+	d.style.height='2%';
+	d.style.background=eclipseGradient;
+	document.body.appendChild(d);
+	
+
+</script>
+
+</body>

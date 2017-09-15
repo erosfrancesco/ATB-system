@@ -1,0 +1,26 @@
+body {
+	background:cyan;
+}
+
+.dotPosition {
+	font-size: 10;
+	background: white;
+	position: absolute;
+	border: 2px solid black;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.Wrapp {
+	position: absolute;
+	border: 1px solid black;
+	left:102px;
+}
+
+.Tumbrl {
+	fill: green;
+	border: 1px solid black;
+	position:relative;
+	left:0%;
+}

@@ -1,0 +1,110 @@
+<head>
+	<link href='../css/sprites.css' rel='stylesheet' type='text/css'>
+	<link href='../css/menu.css' rel='stylesheet' type='text/css'>
+	<link href='../animations/index.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!---->
+		<script src='../setting.js'></script>
+		<script>
+			// in order to use this tool you have to remove the focus patch.
+			// remove the code of the FocusPatch function, in layerbase/wrappers.js
+			for(var path in _Ass){_Ass[path]='../'+_Ass[path];}
+		</script>
+
+		<script src='../layerbase/CoreHeaders.js'></script>
+		<script src='../layerbase/PauseHeader.js'></script>
+		<script src='../layerbase/wrappers.js'></script>
+
+		<script src='../menu/inputobjects.js'></script>
+		<script src='../menu/menu_Headers.js'></script>
+		<script src='../menu/menu.js'></script>
+		<script src='../menu/menumanager.js'></script>
+
+		<script src='../animations/Animations.js'></script>
+	<!---->
+
+	<script>
+			
+		/**/var C_NULL1={
+			cmd:function(){},
+			txt:'Test',
+			sel:false,
+			};
+
+			var C_NULL2={
+				cmd:function(){},
+				txt:'Test',
+				sel:true,
+			};
+		/**/
+
+		/**/var _Init_Menu={
+			Name:'Init',
+			Objects:[],
+			width:'100%',
+			height:'34%',
+			DOM:{x:'0%',y:'66%',Ref:'',Objects:[]},
+			};
+	
+			var _Battle_Menu={
+				Name:'Battle',
+				Objects:[C_NULL2,C_NULL1,C_NULL1],
+				Input:_InputHandlr_Battle,
+				Placer:function(indx){SetElementOfGenericMenu(this,indx);},
+				width:'25%',
+				height:'34%',
+				DOM:{x:'13%',y:'65%',Ref:'',Objects:[]},
+			};
+		/**/
+
+		/**/DrawMenuFromObj(_Init_Menu);
+			LoadCursorMenu();
+			AddMenuToStack(_Battle_Menu);
+			PhaseLoop('MenuInput',function(){InputFrom(ReturnTopMenu().Input,6);});
+		/**/
+
+
+
+
+	</script>
+
+	<style>
+		.rangeInput{
+			border:1px solid black;
+			width:70%;
+		}
+	</style>
+
+
+
+	<div class='inspector'>
+		<input type='range' min='0' max='360' class='rangeInput' id='hue'></input><span>hue</span>
+		<input type='range' min='0' max='100' class='rangeInput' id='contrast'></input><span>contrast</span>
+		<input type='range' min='0' max='100' class='rangeInput' id='brightness'></input><span>brightness</span>
+		<input type='range' min='0' max='100' class='rangeInput' id='saturation'></input><span>saturation</span>
+		<div id='Shower'></div>
+	</div>
+	<script>
+
+	function InpectorWillInspect(){
+		var inputs=document.getElementsByClassName('rangeInput');
+		var hue=inputs[0].value;
+		var contrast=inputs[1].value;
+		var brightness=inputs[2].value;
+		var saturation=inputs[3].value;
+
+		var showDiv=document.getElementById('Shower');
+		showDiv.innerHTML='hue:'+hue+';contrast'+contrast+';';
+
+		//console.log(hue,contrast,brightness,saturation);
+		//console.log('Helloworld');
+	}
+
+	PhaseLoop('TestTest',InpectorWillInspect);
+	
+	</script>
+<!---->
+
+
+</body>
